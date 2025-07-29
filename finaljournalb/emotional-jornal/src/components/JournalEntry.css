@@ -1,0 +1,570 @@
+/* 🌸 ULTRA CREATIVE Journaling UI with Warm Orange/Brown Theme */
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.journal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #d4c4b0;
+  position: relative;
+  overflow: hidden;
+}
+
+.journal-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./calm-wave.avif");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  opacity: 0.2;
+  animation: gentleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.journal-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 60px;
+  height: 60px;
+  background: #ff9a56;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: leafFloat 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes leafFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+    opacity: 0.5;
+  }
+}
+
+.journal-card {
+  background: #faf8f5;
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(196, 131, 107, 0.15), 0 0 0 1px rgba(230, 160, 133, 0.3), inset 0 1px 0
+    rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  width: 100%;
+  padding: 3rem;
+  animation: cardGentleEntrance 1.2s ease-out;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.journal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(196, 131, 107, 0.2), 0 0 0 1px rgba(230, 160, 133, 0.4), inset 0 1px 0
+    rgba(255, 255, 255, 1);
+}
+
+@keyframes cardGentleEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.journal-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #374151;
+  position: relative;
+  animation: breatheText 4s ease-in-out infinite;
+}
+
+.journal-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #c4836b, #e6a085);
+  border-radius: 2px;
+  animation: underlineGrow 2s ease-out;
+}
+
+@keyframes breatheText {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+.journal-textarea {
+  width: 100%;
+  border: 2px solid #e6a085;
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  resize: vertical;
+  background: rgba(249, 248, 245, 0.8);
+  color: #374151;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+  min-height: 180px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  box-shadow: inset 0 2px 4px rgba(196, 131, 107, 0.1);
+}
+
+.journal-textarea:focus {
+  outline: none;
+  border-color: #c4836b;
+  background: #faf8f5;
+  box-shadow: 0 0 0 3px rgba(196, 131, 107, 0.2), inset 0 2px 4px rgba(196, 131, 107, 0.05);
+  transform: translateY(-1px);
+}
+
+.journal-textarea::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.journal-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #c4836b 0%, #e6a085 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(196, 131, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.journal-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.journal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 131, 107, 0.4);
+  background: linear-gradient(135deg, #b5745a 0%, #d4956f 100%);
+}
+
+.journal-button:hover::before {
+  left: 100%;
+}
+
+.journal-button:active {
+  transform: translateY(0);
+}
+
+.journal-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.journal-loading {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #6b7280;
+  font-size: 1rem;
+  animation: loadingBreathe 3s ease-in-out infinite;
+}
+
+@keyframes loadingBreathe {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.journal-result {
+  margin-top: 2.5rem;
+  background: rgba(249, 248, 245, 0.8);
+  border: 1px solid #e6a085;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(196, 131, 107, 0.1);
+  animation: resultSlideIn 0.8s ease-out;
+  position: relative;
+}
+
+.journal-result::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c4836b, #ff9a56, #e6a085);
+  border-radius: 20px 20px 0 0;
+  animation: gentleGlow 4s ease-in-out infinite;
+}
+
+@keyframes resultSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentleGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.journal-result h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+.journal-result p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #4b5563;
+  text-align: center;
+}
+
+/* 🌸 Gentle Quote Card */
+.quote-card {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 154, 86, 0.1);
+  border-left: 4px solid #ff9a56;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(255, 154, 86, 0.15);
+  font-style: italic;
+  color: #374151;
+  position: relative;
+  animation: quoteGentleFloat 6s ease-in-out infinite;
+}
+
+.quote-card::before {
+  content: '"';
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  font-size: 2rem;
+  color: rgba(255, 154, 86, 0.4);
+  font-family: serif;
+}
+
+@keyframes quoteGentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.quote-card h3 {
+  margin-bottom: 0.8rem;
+  color: #374151;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* 🌿 Peaceful Checklist Section */
+.checklist-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(230, 160, 133, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(230, 160, 133, 0.15);
+  animation: checklistSlide 0.8s ease-out;
+}
+
+@keyframes checklistSlide {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.checklist-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #374151;
+  text-align: center;
+}
+
+.checklist-section ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.checklist-section li {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: rgba(249, 248, 245, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(196, 131, 107, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: listItemSlide 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.checklist-section li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.checklist-section li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.checklist-section li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.checklist-section li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes listItemSlide {
+  0% {
+    transform: translateX(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.checklist-section li:hover {
+  background: rgba(249, 248, 245, 0.9);
+  transform: translateX(3px);
+  box-shadow: 0 2px 6px rgba(196, 131, 107, 0.15);
+}
+
+.checklist-section input[type="checkbox"] {
+  margin-right: 0.8rem;
+  transform: scale(1.2);
+  accent-color: #c4836b;
+  cursor: pointer;
+}
+
+.checklist-section label {
+  cursor: pointer;
+  font-weight: 400;
+  color: #374151;
+  transition: color 0.3s ease;
+}
+
+.checklist-section label:hover {
+  color: #1f2937;
+}
+
+/* 🎬 Serene Video Section */
+.video-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(242, 184, 150, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(242, 184, 150, 0.15);
+  text-align: center;
+  animation: videoSlideUp 0.8s ease-out;
+}
+
+@keyframes videoSlideUp {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.video-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.video-section .video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(196, 131, 107, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-section .video-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.video-section iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Character Counter */
+.char-counter {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  background: rgba(249, 248, 245, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(196, 131, 107, 0.15);
+  transition: all 0.3s ease;
+  animation: counterBreathe 4s ease-in-out infinite;
+}
+
+@keyframes counterBreathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .journal-wrapper {
+    padding: 1rem;
+  }
+
+  .journal-card {
+    padding: 2rem;
+  }
+
+  .journal-heading {
+    font-size: 2rem;
+  }
+
+  .journal-textarea {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .journal-button {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility and Focus States */
+.journal-textarea:focus,
+.journal-button:focus,
+.checklist-section input:focus,
+.video-section .video-wrapper:focus-within {
+  outline: 2px solid #c4836b;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Gentle hover effects for better UX */
+.journal-card *:hover {
+  transition: all 0.3s ease;
+}
