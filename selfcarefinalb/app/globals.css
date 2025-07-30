@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Main Brand Orange/Brown Gradient */
+    --brand-primary: 15 40% 59%; /* #c4836b */
+    --brand-light-peach: 20 60% 70%; /* #e6a085 */
+    --brand-lightest-peach: 25 70% 77%; /* #f2b896 */
+    --brand-medium-brown: 20 40% 63%; /* #d4956f */
+    --brand-darker-brown: 15 40% 53%; /* #b5745a */
+    --brand-accent-orange: 30 100% 67%; /* #ff9a56 */
+
+    /* Outer Background */
+    --background-outer: 35 20% 82%; /* #d4c4b0 */
+    /* Main Container */
+    --container-main: 35 40% 97%; /* #faf8f5 */
+
+    /* Card Backgrounds */
+    --card-bg-light-orange: 30 100% 98%; /* approx orange-50 */
+    --card-bg-light-orange-transparent: 30 100% 98% / 0.5; /* approx orange-100/50 */
+
+    /* Primary Text */
+    --text-dark-gray: 0 0% 20%; /* #333333 */
+    --text-medium-gray: 0 0% 30%; /* #4d4d4d */
+    --text-light-gray: 0 0% 40%; /* #666666 */
+    --text-lightest-gray: 0 0% 50%; /* #808080 */
+    --text-darkest-gray: 0 0% 10%; /* #1a1a1a */
+
+    /* Decorative Elements */
+    --decorative-orange-dark: 30 100% 50%; /* #ff8000 */
+    --decorative-orange-medium: 30 100% 60%; /* #ff9933 */
+    --decorative-orange-light: 30 100% 70%; /* #ffb366 */
+
+    /* Shadcn defaults, mapped to new palette */
+    --background: var(--container-main);
+    --foreground: var(--text-dark-gray);
+    --card: var(--container-main);
+    --card-foreground: var(--text-dark-gray);
+    --popover: var(--container-main);
+    --popover-foreground: var(--text-dark-gray);
+    --primary: var(--brand-primary);
+    --primary-foreground: 0 0% 98%; /* White */
+    --secondary: var(--brand-light-peach);
+    --secondary-foreground: var(--text-dark-gray);
+    --muted: var(--brand-lightest-peach);
+    --muted-foreground: var(--text-lightest-gray);
+    --accent: var(--brand-accent-orange);
+    --accent-foreground: 0 0% 98%; /* White */
+    --destructive: 0 84.2% 60.2%; /* Keep default red for destructive */
+    --destructive-foreground: 0 0% 98%;
+    --border: var(--brand-light-peach);
+    --input: var(--brand-light-peach);
+    --ring: var(--brand-primary);
+
+    /* Chart colors - keeping original as no specific new values provided */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar colors - keeping original as no specific new values provided */
+    --sidebar-background: var(--container-main);
+    --sidebar-foreground: var(--text-dark-gray);
+    --sidebar-primary: var(--brand-primary);
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: var(--brand-light-peach);
+    --sidebar-accent-foreground: var(--text-dark-gray);
+    --sidebar-border: var(--brand-light-peach);
+    --sidebar-ring: var(--brand-primary);
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Keeping existing dark mode values as no new dark mode palette was provided */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    @apply bg-background text-foreground;
+  }
+}
