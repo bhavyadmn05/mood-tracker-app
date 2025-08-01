@@ -2,10 +2,9 @@
 Welcome to the Mood Tracker App — your personal companion for emotional wellness, self-discovery, and mental health awareness. This full-stack application helps you track daily moods, journal thoughts, and engage in personalized self-care routines, all powered by insightful data.
 
 <img width="716" height="421" alt="image" src="https://github.com/user-attachments/assets/43f1edd7-fbd3-4987-b6f6-d13c3440e7c9" />
-
-✨ Features
 <img width="705" height="344" alt="image" src="https://github.com/user-attachments/assets/5102c060-ec71-4c99-9cae-8424cae26db4" />
 
+✨ Features
 🎭 Mood Tracking
 Real-time emotion detection using webcam and AI, helping you understand emotional patterns over time.
 1.real time emotion detection
