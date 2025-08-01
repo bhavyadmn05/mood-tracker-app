@@ -123,3 +123,103 @@ moodtrackerapp/
 │   └── emotion-journal-backend/ # Flask backend for journaling
 ├── selfcarefinalb/             # Gamified self-care app (Next.js)
 ├── streamlit_app/              # Real-time emotion detection (Streamlit)
+
+## 🛠️ Setup & Installation
+
+### 📋 Prerequisites
+
+- Node.js v18+
+- npm or Yarn
+- Python v3.8+
+- pip
+- PostgreSQL DB (Neon, Supabase, or local)
+
+---
+
+### 🔁 1. Clone the Repository
+
+```bash
+git clone https://github.com/bhavyadmn05/mood-tracker-app/
+cd moodtrackerapp
+🔐 2. Configure Environment Variables
+Create a .env.local file in the root directory:
+
+env
+Copy
+Edit
+DATABASE_URL="postgresql://user:password@host:port/database"
+JWT_SECRET="your_jwt_secret_key_here"
+🧱 3. Database Setup
+Install ts-node globally (if not already):
+
+bash
+Copy
+Edit
+npm install -g ts-node
+Run the setup script:
+
+bash
+Copy
+Edit
+ts-node app/scripts/setup-database.ts
+This creates the users table using create-users-table.sql.
+
+💻 4. Start Applications
+A. Main App (Next.js)
+bash
+Copy
+Edit
+cd moodtrackerapp
+npm install
+npm run dev
+# Access: http://localhost:3000
+B. Journaling App
+Flask Backend:
+
+bash
+Copy
+Edit
+cd finaljournalb/emotion-journal-backend
+pip install -r requirements.txt
+python app.py
+# Access: http://127.0.0.1:5000
+React Frontend:
+
+bash
+Copy
+Edit
+cd finaljournalb/emotional-jornal
+npm install
+npm start
+# Access: http://localhost:3001
+C. Self-Care App
+bash
+Copy
+Edit
+cd selfcarefinalb
+npm install
+npm run dev
+# Access: http://localhost:3002
+D. Streamlit Emotion Detection
+bash
+Copy
+Edit
+cd streamlit_app
+pip install -r requirements.txt
+streamlit run app.py
+# Access: http://localhost:8501
+💡 Usage Workflow
+✅ Register/Login
+Visit: http://localhost:3000/auth
+
+😊 Mood Tracking (AI Detection)
+Visit: http://localhost:8501
+
+📓 Journal Entries
+Visit: http://localhost:3001
+
+🪴 Self-Care Garden Checklist
+Visit: http://localhost:3002
+
+📄 License
+Licensed under the MIT License — see LICENSE for full details.
