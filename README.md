@@ -137,73 +137,47 @@ moodtrackerapp/
 ---
 
 ### 🔁 1. Clone the Repository
-
-```bash
 git clone https://github.com/bhavyadmn05/mood-tracker-app/
 cd moodtrackerapp
+
 🔐 2. Configure Environment Variables
 Create a .env.local file in the root directory:
-
-env
-Copy
-Edit
 DATABASE_URL="postgresql://user:password@host:port/database"
 JWT_SECRET="your_jwt_secret_key_here"
+
 🧱 3. Database Setup
 Install ts-node globally (if not already):
-
-bash
-Copy
-Edit
 npm install -g ts-node
 Run the setup script:
-
-bash
-Copy
-Edit
 ts-node app/scripts/setup-database.ts
 This creates the users table using create-users-table.sql.
 
 💻 4. Start Applications
 A. Main App (Next.js)
-bash
-Copy
-Edit
 cd moodtrackerapp
 npm install
 npm run dev
 # Access: http://localhost:3000
+
 B. Journaling App
 Flask Backend:
-
-bash
-Copy
-Edit
 cd finaljournalb/emotion-journal-backend
 pip install -r requirements.txt
 python app.py
 # Access: http://127.0.0.1:5000
 React Frontend:
-
-bash
-Copy
-Edit
 cd finaljournalb/emotional-jornal
 npm install
 npm start
 # Access: http://localhost:3001
+
 C. Self-Care App
-bash
-Copy
-Edit
 cd selfcarefinalb
 npm install
 npm run dev
 # Access: http://localhost:3002
+
 D. Streamlit Emotion Detection
-bash
-Copy
-Edit
 cd streamlit_app
 pip install -r requirements.txt
 streamlit run app.py
