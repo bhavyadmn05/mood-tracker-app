@@ -17,8 +17,7 @@ Real-time emotion detection using webcam and AI, helping you understand emotiona
 
 1. Real-time emotion detection  
 <div align="center">
-  <img width="951" height="434" alt="image" src="<img width="943" height="436" alt="image" src="https://github.com/user-attachments/assets/dac51c1c-aa5a-4b58-8a9a-b400f7807b34" />
-" />
+  <img width="951" height="434" alt="image" src="<img width="943" height="436" alt="image" src="<img width="943" height="436" alt="image" src="https://github.com/user-attachments/assets/64f34d87-986a-44d0-81e2-623bdd857d88" />
 </div>
 
 2. Past and present full analysis of mood tracking  
